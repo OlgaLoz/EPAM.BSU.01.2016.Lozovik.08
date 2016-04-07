@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.NUnit.Tests", "Task1.NUnit.Tests\Task1.NUnit.Tests.csproj", "{B3DD598E-ED77-44D8-A7A8-FC5250E50889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{8C31E378-30B8-4E32-BB1B-4C467786F420}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.NUnit.Tests", "Task2.NUnit.Tests\Task2.NUnit.Tests.csproj", "{83DEAB31-8719-410A-B88F-A366C4622594}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{B3DD598E-ED77-44D8-A7A8-FC5250E50889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3DD598E-ED77-44D8-A7A8-FC5250E50889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3DD598E-ED77-44D8-A7A8-FC5250E50889}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C31E378-30B8-4E32-BB1B-4C467786F420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C31E378-30B8-4E32-BB1B-4C467786F420}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C31E378-30B8-4E32-BB1B-4C467786F420}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C31E378-30B8-4E32-BB1B-4C467786F420}.Release|Any CPU.Build.0 = Release|Any CPU
 		{83DEAB31-8719-410A-B88F-A366C4622594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83DEAB31-8719-410A-B88F-A366C4622594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83DEAB31-8719-410A-B88F-A366C4622594}.Release|Any CPU.ActiveCfg = Release|Any CPU
