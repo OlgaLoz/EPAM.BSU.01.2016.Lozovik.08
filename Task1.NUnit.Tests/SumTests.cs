@@ -35,7 +35,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(SquareMatrix<int>))]
         public Type Simmetric_Plus_Square_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(3);
+            Matrix<int> matrix = new SimmetricMatrix<int>(3);
             dynamic result = matrix.Add(new SquareMatrix<int>(3));
             return result.GetType();
         }
@@ -43,7 +43,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(SimmetricMatrix<int>))]
         public Type Simmetric_Plus_Simmetric_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(3);
+            Matrix<int> matrix = new SimmetricMatrix<int>(3);
             dynamic result = matrix.Add(new SimmetricMatrix<int>(3));
             return result.GetType();
         }
@@ -51,7 +51,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(SimmetricMatrix<int>))]
         public Type Simmetric_Plus_Diagonal_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(3);
+            Matrix<int> matrix = new SimmetricMatrix<int>(3);
             dynamic result = matrix.Add(new DiagonalMatrix<int>(3));
             return result.GetType();
         }
@@ -59,7 +59,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(SquareMatrix<int>))]
         public Type Diagonal_Plus_Square_Test()
         {
-            SquareMatrix<int> matrix = new DiagonalMatrix<int>(3);
+            Matrix<int> matrix = new DiagonalMatrix<int>(3);
             dynamic result = matrix.Add(new SquareMatrix<int>(3));
             return result.GetType();
         }
@@ -67,7 +67,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(SimmetricMatrix<int>))]
         public Type Diagonal_Plus_Simmetric_Test()
         {
-            SquareMatrix<int> matrix = new DiagonalMatrix<int>(3);
+            Matrix<int> matrix = new DiagonalMatrix<int>(3);
             dynamic result = matrix.Add(new SimmetricMatrix<int>(3));
             return result.GetType();
         }
@@ -75,7 +75,7 @@ namespace Task1.NUnit.Tests
         [TestCase(Result = typeof(DiagonalMatrix<int>))]
         public Type Diagonal_Plus_Diagonal_Test()
         {
-            SquareMatrix<int> matrix = new DiagonalMatrix<int>(3);
+            Matrix<int> matrix = new DiagonalMatrix<int>(3);
             dynamic result = matrix.Add(new DiagonalMatrix<int>(3));
             return result.GetType();
         }
@@ -101,7 +101,7 @@ namespace Task1.NUnit.Tests
         public void Square_Plus_Simmetric_Sum_Result_Test()
         {
             SquareMatrix<int> matrix = new SquareMatrix<int>(2){ [1, 1] = 1, [0, 0] = 7 };
-            SquareMatrix<int> secondMatrix  = new SimmetricMatrix<int>(2){ [0, 1] = 7 };
+            Matrix<int> secondMatrix  = new SimmetricMatrix<int>(2){ [0, 1] = 7 };
             
             SquareMatrix<int> sumResult = matrix.Add(secondMatrix);
 
@@ -119,7 +119,7 @@ namespace Task1.NUnit.Tests
         public void Square_Plus_Diagonal_Sum_Result_Test()
         {
             SquareMatrix<int> matrix = new SquareMatrix<int>(2) {[1, 1] = 1,[0, 0] = 7 };
-            SquareMatrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -5 };
+            Matrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -5 };
 
             SquareMatrix<int> sumResult = matrix.Add(secondMatrix);
 
@@ -154,8 +154,8 @@ namespace Task1.NUnit.Tests
         [TestCase()]
         public void Simmetric_Plus_Simmetric_Sum_Result_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(2) {[0, 0] = 7 };
-            SquareMatrix<int> secondMatrix = new SimmetricMatrix<int>(2) {[0, 1] = 7 };
+            Matrix<int> matrix = new SimmetricMatrix<int>(2) {[0, 0] = 7 };
+            Matrix<int> secondMatrix = new SimmetricMatrix<int>(2) {[0, 1] = 7 };
 
             SimmetricMatrix<int> sumResult = matrix.Add(secondMatrix);
 
@@ -172,8 +172,8 @@ namespace Task1.NUnit.Tests
         [TestCase()]
         public void Simmetric_Plus_Diagonal_Sum_Result_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(2) {[1, 1] = 1,[1, 0] = 7 };
-            SquareMatrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -5 };
+            SimmetricMatrix<int> matrix = new SimmetricMatrix<int>(2) {[1, 1] = 1,[1, 0] = 7 };
+            Matrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -5 };
 
             SimmetricMatrix<int> sumResult = matrix.Add(secondMatrix);
 
@@ -190,8 +190,8 @@ namespace Task1.NUnit.Tests
         [TestCase()]
         public void Diagonal_Plus_Diagonal_Sum_Result_Test()
         {
-            SquareMatrix<int> matrix = new DiagonalMatrix<int>(2) {[1, 1] = 1,[0, 0] = 7 };
-            SquareMatrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -14 };
+            Matrix<int> matrix = new DiagonalMatrix<int>(2) {[1, 1] = 1,[0, 0] = 7 };
+            Matrix<int> secondMatrix = new DiagonalMatrix<int>(2) {[0, 0] = -14 };
 
             DiagonalMatrix<int> sumResult = matrix.Add(secondMatrix);
 

@@ -15,7 +15,7 @@ namespace Task1.NUnit.Tests
         [TestCase(ExpectedException = typeof(InvalidOperationException))]
         public void Indexator_SetOnBadIndex_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(2)
+            Matrix<int> matrix = new SimmetricMatrix<int>(2)
             {
                 [1, 1] = 1,
                 [2, 2] = 7
@@ -25,7 +25,7 @@ namespace Task1.NUnit.Tests
         [TestCase(ExpectedException = typeof(InvalidOperationException))]
         public void Indexator_GetFromBadIndex_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(2)
+            Matrix<int> matrix = new SimmetricMatrix<int>(2)
             {
                 [1, 1] = 1,
                 [0, 0] = 7
@@ -36,7 +36,7 @@ namespace Task1.NUnit.Tests
         [TestCase()]
         public void Indexator_Test()
         {
-            SquareMatrix<int> matrix = new SimmetricMatrix<int>(3)
+            Matrix<int> matrix = new SimmetricMatrix<int>(3)
             {
                 [1, 2] = 1,
                 [1, 0] = 7

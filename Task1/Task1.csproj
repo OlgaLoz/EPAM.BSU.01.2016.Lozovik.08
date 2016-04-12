@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiagonalMatrix.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="MatrixIndexEventArgs.cs" />
     <Compile Include="MatrixSumVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

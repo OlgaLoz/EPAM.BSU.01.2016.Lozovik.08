@@ -2,28 +2,26 @@
 
 namespace Task1
 {
-    public class DiagonalMatrix<T> : SquareMatrix<T>
+    public class DiagonalMatrix<T> : Matrix<T>
     {
-        public DiagonalMatrix(int size) : base(size){ }
-
-        public override T this[int i, int j]
+        public DiagonalMatrix(int size) : base(size)
         {
-            get
-            {
-                CheckIndex(i, j);
-                return matrix[i, j];
-            }
-            set
-            {
-                CheckIndex(i, j);
-                if (i != j)
-                {
-                    throw new ArgumentException("Index 'i' must be equal to index 'j'!");
-                }
+            matrix = new T[Size];
+        }
 
-                matrix[i, j] = value;
-                OnElementChange(new MatrixIndexEventArgs(i, j));
+        protected override T IndexatorGet(int i, int j)
+        {
+            return i == j ? matrix[i] : default(T);
+        }
+
+        protected override void IndexatorSet(int i, int j, T value)
+        {
+            if (i != j)
+            {
+                throw new ArgumentException("Index 'i' must be equal to index 'j'!");
             }
+
+            matrix[i] = value;
         }
     }
 }

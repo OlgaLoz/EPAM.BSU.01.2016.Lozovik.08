@@ -2,66 +2,21 @@
 
 namespace Task1
 {
-    public class SquareMatrix<T> 
+    public class SquareMatrix<T> : Matrix<T>
     {
-        protected readonly T[,] matrix;
-        protected int size;
-
-        public EventHandler<MatrixIndexEventArgs> ElementChange = delegate { };
-
-        public int Size
+        public SquareMatrix(int size) : base(size)
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Size of matrix must be more than 0!");
-                }
-                size = value;
-            }
+            matrix = new T[Size*Size];
         }
 
-        public SquareMatrix(int size)
+        protected override T IndexatorGet(int i, int j)
         {
-            Size = size;
-            matrix = new T[size, size];
+            return matrix[i*Size + j];
         }
 
-        public virtual T this[int i, int j]
+        protected override void IndexatorSet(int i, int j, T value)
         {
-            get
-            {
-                CheckIndex(i, j);
-                return matrix[i, j];
-            }
-            set
-            {
-                CheckIndex(i, j);
-                matrix[i, j] = value;
-                OnElementChange(new MatrixIndexEventArgs(i, j));
-            }
-        }
-
-        public void Accept(IVisitor<T> visitor)
-        {
-            visitor.Visit((dynamic)this);
-        }
-
-        protected virtual void OnElementChange(MatrixIndexEventArgs e)
-        {
-            ElementChange((dynamic)this, e);
-        }
-
-        protected void CheckIndex(int i, int j)
-        {
-            if (i < 0 || j < 0 || i >= Size || j >= Size)
-            {
-                throw new InvalidOperationException("Bad index!");
-            }
+            matrix[i * Size + j] = value;
         }
     }
 }
